@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('grunt').npmTasks('grunt-compile-handlebars').cli();
+require('grunt').npmTasks('grunt-compile-handlebars-extra').cli();
