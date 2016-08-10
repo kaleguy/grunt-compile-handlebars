@@ -1,5 +1,5 @@
 {
-  "name": "grunt-compile-handlebars",
+  "name": "grunt-compile-handlebars-extra",
   "description": "Compile handlebar templates, outputting static HTML, add optional data params",
   "version": "2.0.2",
   "homepage": "https://github.com/patrickkettner/grunt-compile-handlebars-extra",
