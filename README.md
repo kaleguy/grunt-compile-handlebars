@@ -11,6 +11,8 @@ can put this in the first line of your template file:
 
 pageId will be added to the data used to compile the template.
 
+Remaining docs are from original project.
+
 ## Getting Started
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-compile-handlebars`
 
