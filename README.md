@@ -1,6 +1,15 @@
-# grunt-compile-handlebars [![Build Status](https://secure.travis-ci.org/patrickkettner/grunt-compile-handlebars.png?branch=master)](http://travis-ci.org/patrickkettner/grunt-compile-handlebars)
+# grunt-compile-handlebars-extra [![Build Status](https://secure.travis-ci.org/patrickkettner/grunt-compile-handlebars.png?branch=master)](http://travis-ci.org/patrickkettner/grunt-compile-handlebars)
 
-Compiles handlebar templates, outputs static HTML
+Compiles handlebar templates, outputs static HTML.
+
+This is a fork from the original grunt-compiles-handlebars. This version allows you to put some extra
+data into the start of your template. For example, if you have a bunch of hbs templates that require
+a pageId to be uniquely added per page along with data that is used for all of the templates, you 
+can put this in the first line of your template file:
+
+```<!-- {pageId: 1234} --> ```
+
+pageId will be added to the data used to compile the template.
 
 ## Getting Started
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-compile-handlebars`
