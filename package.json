@@ -1,28 +1,28 @@
 {
   "name": "grunt-compile-handlebars",
-  "description": "Compile handlebar templates, outputting static HTML",
+  "description": "Compile handlebar templates, outputting static HTML, add optional data params",
   "version": "2.0.2",
-  "homepage": "https://github.com/patrickkettner/grunt-compile-handlebars",
+  "homepage": "https://github.com/patrickkettner/grunt-compile-handlebars-extra",
   "author": {
-    "name": "Patrick Kettner",
-    "email": "patrick@patrickkettner.com",
-    "url": "https://github.com/patrickkettner"
+    "name": "Joe Orr",
+    "email": "joe.orr@gmail.com",
+    "url": "https://github.com/kaleguy"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/patrickkettner/grunt-compile-handlebars.git"
+    "url": "git://github.com/patrickkettner/grunt-compile-handlebars-extra.git"
   },
   "bugs": {
-    "url": "https://github.com/patrickkettner/grunt-compile-handlebars/issues"
+    "url": "https://github.com/kaleguy/grunt-compile-handlebars-extra/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/patrickkettner/grunt-compile-handlebars/blob/master/LICENSE-MIT"
+      "url": "https://github.com/kaleguy/grunt-compile-handlebars-extra/blob/master/LICENSE-MIT"
     }
   ],
   "main": "grunt.js",
-  "bin": "bin/grunt-compile-handlebars",
+  "bin": "bin/grunt-compile-handlebars-extra",
   "engines": {
     "node": "*>= 0.8.0"
   },
