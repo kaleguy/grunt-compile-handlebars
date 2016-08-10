@@ -223,11 +223,27 @@ module.exports = function(grunt) {
       handlebars.registerPartial(name, fs.readFileSync(fs.realpathSync(partial), 'utf8'));
     });
 
-    var compile = function(file, filepath, index) {
+  var compile = function(file, filepath, index) {
       var dest = file.dest || '';
       var template = filepath;
-      var compiledTemplate = handlebars.compile(parseData(template, true));
+      var parsedTemplate = parseData(template, true);
+
+      // check if there is a comment at start of template, if so
+      // it may have extra data
+      var leadingComment = parsedTemplate.match(/^<!--(.*)-->/);
+      var extraParams = {};
+      if (Array.isArray(leadingComment)){
+        leadingComment = leadingComment[1];
+        try {
+          eval("extraParams = " + leadingComment);
+        } catch (e){
+          console.log("Bad eval in leading comment in template: ", filepath, e)
+        }
+      }
+      var compiledTemplate = handlebars.compile(parsedTemplate);
+
       var templateData = getTemplateData(config.templateData, filepath, index);
+
       var outputPath = getDest(dest, index);
       var appendToFile = (outputPath === file.orig.dest && grunt.file.exists(outputPath));
       var operation = appendToFile ? 'appendFileSync' : 'writeFileSync';
@@ -237,8 +253,10 @@ module.exports = function(grunt) {
       if (config.preHTML) {
         html += parseData(config.preHTML);
       }
-
       json = mergeJson(parseData(templateData), config.globals || []);
+      Object.keys(extraParams).forEach(function(k){
+        json[k] = extraParams[k];
+      });
 
       html += compiledTemplate(json);
 
